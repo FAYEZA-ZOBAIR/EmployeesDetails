@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #89c5be;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin: 20px auto;
+    width: 300px;
+}
+
+label, input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 16px;
+    border-color: aliceblue;
+    text-align: center;
+    padding: 7px;
+}
+
+button {
+    background-color: #E27D60;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ac3d1e;
+}
+
+#employeeList {
+    margin-top: 50px;
+}
