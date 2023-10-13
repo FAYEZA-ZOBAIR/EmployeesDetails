@@ -39,17 +39,25 @@ function clearInputFields() {
 }
 
 function displayEmployees() {
-    const employeeUl = document.getElementById('employeeUl');
+    const employeeTable = document.getElementById('employeeTable');
 
     const employeeDetails = employees.map((employee) => {
-        return `Name: ${employee.name}, ID: ${employee.id}, Designation: ${employee.designation}, Email: ${employee.email}, Contact: ${employee.contact}`;
+        return `<tr>
+            <td>${employee.name}</td>
+            <td>${employee.id}</td>
+            <td>${employee.designation}</td>
+            <td>${employee.email}</td>
+            <td>${employee.contact}</td>
+        </tr>
+        `
+        //`Name: ${employee.name}, ID: ${employee.id}, Designation: ${employee.designation}, Email: ${employee.email}, Contact: ${employee.contact}`;
     });
 
-    employeeUl.innerHTML = `<li>${employeeDetails.join('</li><li>')}</li>`;
+    employeeTable.innerHTML = `<tbody>${employeeDetails.join('')}</tbody>`;
 }
 /* function employees() {
     localStorage.clear();
   }*/
-  
+
 document.getElementById('addEmployeeButton').addEventListener('click', addEmployee);
 document.getElementById('showEmployeeButton').addEventListener('click', displayEmployees);

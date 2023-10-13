@@ -5,7 +5,11 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: transparent;
+    background: linear-gradient(to right, #E27D60, #3e1004);
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 form {
@@ -18,19 +22,19 @@ form {
     padding: 20px;
     width: 500px; 
     margin: 0 auto; 
-    background-color: #c4d8d6; 
+    background-color: #d2eaf1; 
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
     
 }
 label, input {
-    background-color: #c4d8d6;
+    background-color: #d2eaf1;
     display: block;
     margin-bottom: 1px;
     width: 90%;
     border-radius: 3px;
-    border-color: #05574f;
+    border-color: #082a2a;
     text-align: left;
     padding-top: 7px;
     font-size: 18px;
@@ -52,16 +56,27 @@ button:hover {
 }
 
 #displayList {
-    margin-top: 50px;
-    font-size: 20px;
+    text-align: center;
+}
 
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
 }
-#employeeUl li {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
+
+th, td {
     border: 1px solid #ddd;
-    background-color: #89c5be;
-    color: #333;
-    align-items: center;
+    padding: 8px;
+    text-align: left; 
 }
+
+th {
+    background-color: #d2eaf1;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #d2eaf1;
+}
+
