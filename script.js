@@ -1,4 +1,6 @@
-const employees = [];
+
+const storedEmployees = JSON.parse(localStorage.getItem('employees'));
+const employees = storedEmployees || [];
 
 function addEmployee() {
     const name = document.getElementById('employeeName').value;
@@ -7,6 +9,11 @@ function addEmployee() {
     const email = document.getElementById('employeeEmail').value; 
     const contact = document.getElementById('employeeContact').value;
 
+    if (name === '' || id === '' || designation === '' || email === '' || contact === '') {
+        alert('Please fill in all fields before adding an employee.');
+        return;
+    }
+    
     const employee = {
         name,
         id,
@@ -15,14 +22,20 @@ function addEmployee() {
         contact
     };
     employees.push(employee);
-
+    saveToLS();
     clearInputFields();
+}
+
+function saveToLS() {
+    localStorage.setItem('employees', JSON.stringify(employees));
 }
 
 function clearInputFields() {
     ['employeeName', 'employeeId', 'employeeDesignation', 'employeeEmail', 'employeeContact'].forEach((field) => {
         document.getElementById(field).value = '';
     });
+
+    saveToLS();
 }
 
 function displayEmployees() {
@@ -34,6 +47,9 @@ function displayEmployees() {
 
     employeeUl.innerHTML = `<li>${employeeDetails.join('</li><li>')}</li>`;
 }
-
+/* function employees() {
+    localStorage.clear();
+  }*/
+  
 document.getElementById('addEmployeeButton').addEventListener('click', addEmployee);
 document.getElementById('showEmployeeButton').addEventListener('click', displayEmployees);
