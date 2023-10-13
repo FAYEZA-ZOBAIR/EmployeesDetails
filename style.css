@@ -43,12 +43,14 @@ label, input {
 label{
     padding-bottom: 10px;
 }
+
 button {
     background-color: #E27D60;
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -57,6 +59,7 @@ button:hover {
 
 #displayList {
     text-align: center;
+    margin-top: 50px;
 }
 
 table {
@@ -80,3 +83,24 @@ tr:nth-child(even) {
     background-color: #d2eaf1;
 }
 
+@media (max-width: 750px) {
+    body {
+        justify-content: center;
+        align-items: center; 
+    }
+    .card{
+        width: 50%;
+    
+        align-items: center;
+        justify-content: center;
+    }
+    form{
+        align-items: center;
+        justify-content: center;
+    }
+    #displayList {
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+    }
+}
